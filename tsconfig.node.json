@@ -1,10 +1,15 @@
 {
-  "extends": ["@unconfig/ts-config/node.json"],
+  "extends": ["@unconfig/ts-config/node.json", "./tsconfig.path.json"],
   "compilerOptions": {
     "composite": true,
     "outDir": "dist"
   },
-  "include": ["./scripts/**/*"],
+  "include": [
+    "./packages/metas/**/*",
+    "./packages/metas/**/*.json",
+    "./packages/metas/**/typings/**/*",
+    "./scripts/**/*"
+  ],
   "exclude": [
     "**/__tests__/**",
     "**/tests/**",

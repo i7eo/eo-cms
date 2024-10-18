@@ -2,10 +2,7 @@ import { readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import process from 'node:process'
 import { changesetsChangelogGenerate } from '@unconfig/changeset-config'
-import {
-  PKG_PREFIX,
-  PROJECT_CHANGELOG_TEMP_FILE,
-} from '@eo-cms/metas'
+import { PKG_PREFIX, PROJECT_CHANGELOG_TEMP_FILE } from '@eo-cms/metas'
 
 const cwd = process.cwd()
 const excludeFileNames = ['.DS_Store', 'README.md']
