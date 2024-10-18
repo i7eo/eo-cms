@@ -1,0 +1,56 @@
+{
+  "name": "@eo-cms/utils",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.12.2",
+  "type": "module",
+  "license": "MIT",
+  "author": "i7eo",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./*": [
+      "./*",
+      "./*.d.ts"
+    ]
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "DEV=true pnpm build",
+    "test": "vitest",
+    "format": "prettier \"./**/*.{js,ts,jsx,tsx,md,json,jsonc}\" --write",
+    "lint": "TIMING=1 eslint \"./**/*.{js,jsx,ts,tsx,md,json,jsonc}\" --fix",
+    "clean": "run-p \"clean:**\"",
+    "clean:cache": "rimraf .turbo && rimraf dist",
+    "clean:deps": "rimraf node_modules"
+  },
+  "dependencies": {
+    "es-toolkit": "^1.25.2",
+    "nanoid": "^5.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.6",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=9"
+  }
+}

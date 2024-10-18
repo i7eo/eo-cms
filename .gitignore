@@ -1,0 +1,84 @@
+#################### Universal ####################
+
+# Compiled output
+dist
+node_modules
+build
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# misc
+.DS_Store
+*.pem
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+# .env*
+# .env*.local
+
+# temp directory
+.temp
+.tmp
+
+# Other
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.turbo
+.eslintcache
+.shadowenv.d
+.cache
+.pnp
+.pnp.js
+.yarn/install-state.gz
+.vercel
+
+#################### Universal ####################
+
+####################  Backend  ####################
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+####################  Backend  ####################
+
+####################  Current  ####################
+.pnpm-store
+# pnpm-lock.yaml
+packages/app/backend/documentation
+packages/app/backend/public/files
+packages/app/frontend/.next
+packages/database/client
+packages/database/zod-prisma-types
+# # use vercel node runtime serverless, must upload dist files
+# !apps/backend/dist

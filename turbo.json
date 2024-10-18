@@ -1,0 +1,51 @@
+{
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
+    },
+    "build:backend": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["build"]
+    },
+    "build:frontend": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["build"]
+    },
+
+    "db:generate": {
+      "cache": false
+    },
+    "prisma:studio": {
+      "cache": false
+    },
+
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": []
+    },
+
+    "clean": {
+      "cache": false
+    },
+
+    "format": {
+      "cache": false,
+      "outputs": []
+    },
+
+    "lint": {
+      "cache": false,
+      "outputs": []
+    },
+
+    "release": {
+      "cache": false
+    }
+  }
+}

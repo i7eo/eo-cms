@@ -1,0 +1,15 @@
+{
+  "extends": ["@unconfig/ts-config/node.json"],
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "dist"
+  },
+  "include": ["./scripts/**/*"],
+  "exclude": [
+    "**/__tests__/**",
+    "**/tests/**",
+    "node_modules",
+    "**/dist",
+    "**/*.md"
+  ]
+}

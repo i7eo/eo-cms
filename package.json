@@ -1,0 +1,84 @@
+{
+  "name": "@eo-cms/repository",
+  "private": true,
+  "packageManager": "pnpm@9.12.2",
+  "description": "🚀 A modern high-performance monorepo cms project with nest and next!",
+  "keywords": [
+    "monorepo",
+    "pnpm",
+    "turborepo",
+    "changesets",
+    "nestjs",
+    "nextjs",
+    "nest",
+    "next"
+  ],
+  "license": "MIT",
+  "author": "i7eo",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "dev": "turbo run dev",
+    "dev:packages": "turbo run dev --filter=\"./packages/**\"",
+    "build": "turbo run build --filter=!\"./packages/database/**\"",
+    "build:packages": "turbo run build --filter=\"./packages/**\" --filter=!\"./packages/database/**\"",
+    "build:backend": "turbo run build --filter=\"./apps/backend\"",
+    "build:frontend": "turbo run build --filter=\"./apps/frontend\"",
+    "test": "turbo run test",
+    "clean": "run-s \"clean:**\"",
+    "clean:workspace": "turbo run clean",
+    "clean:workspace:cache": "turbo run clean:cache",
+    "clean:root-cache": "rimraf .turbo && rimraf pnpm-lock.yaml && rimraf node_modules",
+    "format": "turbo run format",
+    "lint": "turbo run lint",
+    "commit": "czg",
+    "changeset:init": "pnpm exec changeset init",
+    "prerelease": "tsx ./scripts/changesets/manual-generate-prereleases.cts",
+    "changelog:gen": "tsx ./scripts/changesets/changelog-generate.cts",
+    "changelog:write": "tsx ./scripts/changesets/changelog-write.cts",
+    "changeset:publish": "tsx ./scripts/changesets/generate-releases.cts",
+    "changeset:gen": "changeset"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@eo-cms/metas": "workspace:*",
+    "@types/node": "^22.7.6",
+    "@unconfig/changeset-config": "latest",
+    "@unconfig/commitlint-config": "latest",
+    "@unconfig/eslint-config": "0.1.1",
+    "@unconfig/lint-staged-config": "latest",
+    "@unconfig/prettier-config": "latest",
+    "@unconfig/simple-git-hooks-config": "latest",
+    "@unconfig/ts-config": "latest",
+    "npm-run-all2": "^6.2.4",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.1",
+    "turbo": "^2.1.3",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=9"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    },
+    "overrides": {
+      "prettier": "^2.8.4",
+      "rimraf": "^6.0.1"
+    },
+    "allowedDeprecatedVersions": {
+      "eslint": "*",
+      "@humanwhocodes/config-array": "*",
+      "@humanwhocodes/object-schema": "*",
+      "sourcemap-codec": "*",
+      "glob": "*",
+      "inflight": "*",
+      "uuid": "*",
+      "nestjs-zod": "*"
+    }
+  }
+}

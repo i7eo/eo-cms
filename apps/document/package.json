@@ -1,0 +1,23 @@
+{
+  "name": "@eo-cms/document",
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.12.2",
+  "license": "MIT",
+  "author": "i7eo",
+  "scripts": {
+    "test": "vitest",
+    "format": "prettier \"./**/*.{js,ts,jsx,tsx,md,json,jsonc}\" --write",
+    "lint": "TIMING=1 eslint \"./**/*.{js,jsx,ts,tsx,md,json,jsonc}\" --fix",
+    "clean": "run-p \"clean:**\"",
+    "clean:cache": "rimraf .turbo && rimraf dist",
+    "clean:deps": "rimraf node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.6",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=9"
+  }
+}

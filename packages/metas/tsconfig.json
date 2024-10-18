@@ -1,0 +1,22 @@
+{
+  "extends": ["@unconfig/ts-config/node.json"],
+  "compilerOptions": {
+    "composite": true,
+
+    "baseUrl": "./",
+    "outDir": "dist"
+  },
+  "include": [
+    "./src/**/*",
+    "./**/*.json",
+    "./**/typings/**/*",
+    "./scripts/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**",
+    "**/tests/**",
+    "node_modules",
+    "**/dist",
+    "**/*.md"
+  ]
+}
